@@ -1,6 +1,8 @@
 package io.b1ruk.proj.irrigationDemo.irrigationDemo.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -10,7 +12,9 @@ import java.util.Set;
 
 @Entity
 @Data
+@Builder
 @NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "land")
 @JsonIgnoreProperties(value = "irrigationTimeSlots")
 public class Land {

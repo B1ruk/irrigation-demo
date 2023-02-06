@@ -1,6 +1,9 @@
 package io.b1ruk.proj.irrigationDemo.irrigationDemo.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -8,6 +11,9 @@ import java.util.Set;
 
 @Data
 @Entity
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "crop")
 public class Crop {
 
@@ -22,9 +28,11 @@ public class Crop {
     private String description;
 
     @Column(name = "water_requried_amount")
-    private String waterRequiredAmount;
+    private double waterRequiredAmount;
 
     @OneToMany(mappedBy = "crop")
     private Set<Land> lands=new HashSet<>();
+
+
 
 }

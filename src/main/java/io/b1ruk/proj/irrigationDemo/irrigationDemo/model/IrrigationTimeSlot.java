@@ -1,5 +1,7 @@
 package io.b1ruk.proj.irrigationDemo.irrigationDemo.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -7,6 +9,8 @@ import javax.persistence.*;
 
 @Data
 @Entity
+@Builder
+@AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "irrigation_time_slot")
 public class IrrigationTimeSlot {

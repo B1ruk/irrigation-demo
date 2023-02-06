@@ -30,6 +30,10 @@ public class LandService {
         Crop crop = land.getCrop();
         cropRepository.save(crop);
 
+        if (Objects.isNull(land.getLandIndex())){
+            throw new RuntimeException("Land index cannot be null");
+        }
+
         landRepository.save(land);
 
         return ResponseEntity.ok().build();
